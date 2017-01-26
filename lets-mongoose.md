@@ -5,7 +5,6 @@
 ## What is an ODM?
 ```
 - Object Document Mapper - maps between an Object Model and a Document Database.
-
 ```
 
 ## What is MongooseJS?
@@ -14,7 +13,6 @@
 - 'Wrapper' for MongoDB
 - Shell that organizes and structures data to make MongoDB easier to use
 - Mongoose is not schema-less
-
 ```
 
 ## Why do we need MongooseJS?
@@ -22,7 +20,6 @@
 It is an abstraction on top of working with Mongo to provide a schema and make it easier to 
 perform CRUD operations because it makes working with Mongo more like working with Javascript 
 objects.
-
 ```
 
 ## What does the word "abstraction" mean?
@@ -30,7 +27,6 @@ objects.
 It is a way of removing complexity by providing an interface where we do not have to work with 
 the low level details because they are already taken care of for us "under the hood" by the 
 language/library/middleware etc.
-
 ```
 
 ## How do we use mongoose?
@@ -40,7 +36,6 @@ QuickStart Guide: http://mongoosejs.com/docs/
 - npm install --save mongoose
 - var mongoose = require('mongoose');
 - mongoose.connect('mongodb://localhost/test');
-
 ```
 
 ## What are models in Mongoose?
@@ -48,15 +43,16 @@ QuickStart Guide: http://mongoosejs.com/docs/
 Models are fancy constructors compiled from our Schema definitions. 
 Instances of these models represent documents which can be saved and retrieved from our database. 
 All document creation and retrieval from the database is handled by these models.
-
 ```
 
 ## Define what schema means in Mongoose?
 ```
-Everything in Mongoose starts with a Schema. 
-It is a plan or outline of how we will structure our mongoDB documents for a specific type of entry.
-In the example below, we are creating a 'structural blueprint' for all blog posts.
-Each schema maps to a MongoDB collection and defines the shape of the documents within that collection.
+- Everything in Mongoose starts with a Schema. 
+- It is a plan or outline of how we will structure our mongoDB documents for a specific type 
+of entry.
+- In the example below, we are creating a 'structural blueprint' for all blog posts.
+- Each schema maps to a MongoDB collection and defines the shape of the documents within that 
+collection.
 
 var blogSchema = new Schema({
   title:  String,
@@ -71,7 +67,7 @@ var blogSchema = new Schema({
   }
 });
 
-The permitted SchemaTypes are
+- The permitted SchemaTypes are:
 
 String
 Number
@@ -82,27 +78,25 @@ Mixed
 ObjectId
 Array
 
-If you are dealing with a collection of users, your schema would look something like this.
+If you are dealing with a collection of users, your schema would look something like this:
 
 Name - String
 Age - Number
 Gender - String
 Date of Birth - Date
 
-And if you are dealing with a collection of products, your schema will look something like this
+And if you are dealing with a collection of products, your schema will look something like this:
 
 SKU - String
 Name - String
 Price - Number
 InStock - Boolean
 Quantity - Number
-
 ```
 
 ## How do we connect to our database?
 ```
 mongoose.connect('localhost', 'gettingstarted');
-
 ```
 
 ## What is a "model"?
@@ -110,7 +104,6 @@ mongoose.connect('localhost', 'gettingstarted');
 A Fancy constructor compiled from schema definitions. Instances of these models 
 represent the documents which can be saved and retireved from the database.  All of the
 documents created or retrieved from the database are handled by these models.
-
 ```
 
 ## What is data denormalization and data deduplication?
@@ -122,7 +115,6 @@ of data or grouping data; often motivated by needing to carry out large amount o
 Data deduplication is a special data compression technique for eliminating
 duplicate copies of repeating data, AKA Intelligent(data Compression & Single
 Instance (data) Storage. 
-
 ```
 
 ## What is "built-in-typecasting" in Mongoose?
@@ -131,7 +123,6 @@ Instance (data) Storage.
 transaction. 
 - Typecasting in JS: example - Coercing a string to a number
 - Transaction: Query that hits only once 
-
 ```
 
 ## What is the "population" feature in Mongoose
@@ -141,7 +132,6 @@ transaction.
 with documents from other collections.  Population can be used on: a single document,
 multiple documents, plain object, multiple plain pobjects, or all objects returned
 from a query.  
-
 ```
 
 ## What does "virtual" do in Mongoose?
@@ -185,7 +175,6 @@ PersonSchema
 
 // ... then to retrieve name.full ... : 
 theSituation.name.full;
-
 ```
 
 ## Explain built-in-promises in Mongoose?
@@ -213,7 +202,6 @@ assert.ok(promise instanceof require('mpromise'));
 promise.then(function (doc) {
   // use doc
 });
-
 ```
 
 ## How are documents mapped in Mongoose?
@@ -223,7 +211,6 @@ promise.then(function (doc) {
 - Mongoose documents represent a one-to-one mapping to documents as stored in MongoDB. 
 - Each document is an instance of its Model.
 - One Schema = One Collection (always 1:1)
-
 ```
 
 ## What are custom instance methods and static methods?
@@ -236,7 +223,6 @@ promise.then(function (doc) {
     - example: .findSimilar()
 - Static: 
     - .static() adds static `class` methods to the Models itself
-
 ```
 
 ## What are the 8 built-in types that we can specify for our properties in Mongoose?
@@ -251,7 +237,6 @@ The permitted SchemaTypes are:
 - Mixed
 - ObjectId
 - Array
-
 ```
 
 **Review this code snippet from Mongoose's homepage**
