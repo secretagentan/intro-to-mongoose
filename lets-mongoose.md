@@ -216,7 +216,7 @@ promise.then(function (doc) {
 
 ## How are documents mapped in Mongoose?
 ```
-- [Documents]((http://mongoosejs.com/docs/documents.html)
+- [Documents](http://mongoosejs.com/docs/documents.html)
 - Mongoose documents represent a one-to-one mapping to documents as stored in MongoDB. 
 - Each document is an instance of its Model.
 - One Schema = One Collection (always 1:1)
@@ -270,6 +270,6 @@ kitty.save(function (err) {
 ```
 
 **Resources**
-[Google Search Engine is your best friend](https://www.google.com/)
-[Mongoose Official Doc](http://mongoosejs.com/)
+- [Google Search Engine is your best friend](https://www.google.com/)
+- [Mongoose Official Doc](http://mongoosejs.com/)
 
