@@ -145,8 +145,9 @@ from a query.
 ```
 
 ## What does "virtual" do in Mongoose?
-```
 - [Virtual Attributes](http://mongoosejs.com/docs/2.7.x/docs/virtuals.html)
+
+```
 - "Temporary" properties on model instance
 - Virtual attributes are properties that are useful to have around but do not
     persist in the database
@@ -188,8 +189,9 @@ theSituation.name.full;
 ```
 
 ## Explain built-in-promises in Mongoose?
-```
 - [Built-in Promises](http://mongoosejs.com/docs/promises.html) 
+
+```
 - Mongoose has built-in promises (included w/in the library)
 - No need to require a Promise module 
 - Mongoose async operations (like .save() or queries) return Promises
@@ -215,8 +217,9 @@ promise.then(function (doc) {
 ```
 
 ## How are documents mapped in Mongoose?
-```
 - [Documents](http://mongoosejs.com/docs/documents.html)
+
+```
 - Mongoose documents represent a one-to-one mapping to documents as stored in MongoDB. 
 - Each document is an instance of its Model.
 - One Schema = One Collection (always 1:1)
@@ -224,8 +227,9 @@ promise.then(function (doc) {
 ```
 
 ## What are custom instance methods and static methods?
-```
 - [Methods-Statics](http://mongoosejs.com/docs/2.7.x/docs/methods-statics.html)
+
+```
 - Custom
     - .method() adds an `instance method` to documents constructed from Models
     - Custom methods work on the entire schema/collection
