@@ -1,4 +1,4 @@
-# Lets Mongoose
+# Let's Mongoose
 
 **Within your squads explore these questions**
 
@@ -37,8 +37,9 @@ language/library/middleware etc.
 ```
 QuickStart Guide: http://mongoosejs.com/docs/
 
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test');
+- npm install --save mongoose
+- var mongoose = require('mongoose');
+- mongoose.connect('mongodb://localhost/test');
 
 ```
 
@@ -106,7 +107,7 @@ mongoose.connect('localhost', 'gettingstarted');
 
 ## What is a "model"?
 ```
- A Fancy constructor compiled from schema definitions. Instances of these models 
+A Fancy constructor compiled from schema definitions. Instances of these models 
 represent the documents which can be saved and retireved from the database.  All of the
 documents created or retrieved from the database are handled by these models.
 
@@ -114,11 +115,11 @@ documents created or retrieved from the database are handled by these models.
 
 ## What is data denormalization and data deduplication?
 ```
-data denormalization is the process of trying to improve the read performance
+Data denormalization is the process of trying to improve the read performance
 of a database at the expense of write performance.  done by adding redundant copies
 of data or grouping data; often motivated by needing to carry out large amount of read ops.
 
-data deduplication is a special data compression technique for eliminating
+Data deduplication is a special data compression technique for eliminating
 duplicate copies of repeating data, AKA Intelligent(data Compression & Single
 Instance (data) Storage. 
 
@@ -126,14 +127,17 @@ Instance (data) Storage.
 
 ## What is "built-in-typecasting" in Mongoose?
 ```
-Mongoose will automatically force a data type to act as the given schematype for a single transaction. 
+- Mongoose will automatically force a data type to act as the given schematype for a single 
+transaction. 
+- Typecasting in JS: example - Coercing a string to a number
+- Transaction: Query that hits only once 
 
 ```
 
 ## What is the "population" feature in Mongoose
 ```
-There are no joins in MongoDB, but might need to reference other collections.
-Population is the process of automatically replacing specified paths in the document
+- There are no joins in MongoDB, but might need to reference other collections.
+- Population is the process of _automatically replacing_ specified paths in the document
 with documents from other collections.  Population can be used on: a single document,
 multiple documents, plain object, multiple plain pobjects, or all objects returned
 from a query.  
@@ -142,7 +146,7 @@ from a query.
 
 ## What does "virtual" do in Mongoose?
 ```
-- (http://mongoosejs.com/docs/2.7.x/docs/virtuals.html)
+- [Virtual Attributes](http://mongoosejs.com/docs/2.7.x/docs/virtuals.html)
 - "Temporary" properties on model instance
 - Virtual attributes are properties that are useful to have around but do not
     persist in the database
@@ -185,7 +189,9 @@ theSituation.name.full;
 
 ## Explain built-in-promises in Mongoose?
 ```
-- (http://mongoosejs.com/docs/promises.html) 
+- [Built-in Promises](http://mongoosejs.com/docs/promises.html) 
+- Mongoose has built-in promises (included w/in the library)
+- No need to require a Promise module 
 - Mongoose async operations (like .save() or queries) return Promises
 - Then you can use operations like .then() / .exec() (if using .co() )
 ```
@@ -210,52 +216,39 @@ promise.then(function (doc) {
 
 ## How are documents mapped in Mongoose?
 ```
-- (http://mongoosejs.com/docs/documents.html)
+- [Documents]((http://mongoosejs.com/docs/documents.html)
 - Mongoose documents represent a one-to-one mapping to documents as stored in MongoDB. 
 - Each document is an instance of its Model.
+- One Schema = One Collection (always 1:1)
 
 ```
 
 ## What are custom instance methods and static methods?
 ```
-- (http://mongoosejs.com/docs/2.7.x/docs/methods-statics.html)
-- .method() adds an `instance method` to documents constructed from Models
-```
-```js
-var schema = kittySchema = new Schema(..);
-
-schema.method('meow', function () {
-  console.log('meeeeeoooooooooooow');
-})
-
-```
-```
-- .static() adds static `class` methods to the Models itself
-```
-```js
-var schema = new Schema(..);
-schema.static('findByName', function (name, callback) {
-  return this.find({ name: name }, callback);
-});
-
+- [Methods-Statics](http://mongoosejs.com/docs/2.7.x/docs/methods-statics.html)
+- Custom
+    - .method() adds an `instance method` to documents constructed from Models
+    - Custom methods work on the entire schema/collection
+    - example: .findSimilar()
+- Static: 
+    - .static() adds static `class` methods to the Models itself
 
 ```
 
 ## What are the 8 built-in types that we can specify for our properties in Mongoose?
 ```
-The permitted SchemaTypes are
+The permitted SchemaTypes are:
 
-String
-Number
-Date
-Buffer
-Boolean
-Mixed
-ObjectId
-Array
+- String
+- Number
+- Date
+- Buffer
+- Boolean
+- Mixed
+- ObjectId
+- Array
 
 ```
-
 
 **Review this code snippet from Mongoose's homepage**
 
